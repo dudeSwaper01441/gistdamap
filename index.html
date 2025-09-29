@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Super Cool Maps</title>
+<style type="text/css">
+  html {
+    height: 100%;
+  }
+  body {
+    margin: 0px;
+    height: 100%;
+  }
+  #map {
+    height: 100%;
+  }
+</style>
+    <script type="text/javascript" src="https://api.sphere.gistda.or.th/map/?key=E31EECFFB14C4BB9B208D5C2C5245CAF"></script>
+    <script>
+        var map
+        function init() {
+        map = new sphere.Map({
+              placeholder: document.getElementById('map')
+          });
+        // map.Event.bind(sphere.EventName.Ready, () => {
+        //   map.Layers.add(sphere.Layers.PM25);
+        // });
+        }
+        map.Renderer.on('load', () => {
+        map.Tags.set('มหาวิทยาลัย', { label: true }) // กรณีท่านต้องการทั้งหมด สามารถใช้ % ได้
+      }
+    )
+    </script>
+  </head>
+  <body onload="init();">
+      <div id="map"></div>
+  </body>
+</html>
